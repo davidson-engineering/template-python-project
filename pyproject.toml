@@ -28,10 +28,14 @@ classifiers = [
 #    "numpy",
 #    "my_module @ git+https://github.com/my_github/my_repo.git@tag", 
 # ]
+# Use this line if your project comprises of modules only without any ./src/* files
+#[tool.setuptools]
+#py-modules = []
 
 # If a module, then use fetch version from src/module_name/__init__.py
 [tool.setuptools.dynamic]
 version = {attr = "module0.__version__"}
+
 
 [project.optional-dependencies]
 test = [
