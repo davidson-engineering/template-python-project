@@ -8,7 +8,7 @@ version = "0.0.1"
 # dynamic = ["version"]
 
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 license = {file = "LICENSE"}
 authors = [
   {email = "matthew@davidson.engineering"},
@@ -18,7 +18,7 @@ authors = [
 classifiers = [
     "Development Status :: 1 - Planning",
     "Operating System :: Microsoft :: Windows",
-    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.9",
 ]
 
 # dependencies = [
