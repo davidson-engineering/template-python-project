@@ -3,7 +3,7 @@ name = "project_or_module_name"
 description = "A_short_description"
 
 # If a project, then you can specify version here
-# version = "0.0.0"
+version = "0.0.1"
 # If a module, then fetch version dynamically (see [tool.setuptools.dynamic] below)
 # dynamic = ["version"]
 
@@ -11,7 +11,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = {file = "LICENSE"}
 authors = [
-  {email = "matthew.davidson@generalfusion.com"},
+  {email = "matthew@davidson.engineering"},
   {name = "Matthew Davidson"}
 ]
 
