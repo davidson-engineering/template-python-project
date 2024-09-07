@@ -17,11 +17,11 @@ jobs:
     name: Test on Python ${{ matrix.python-version }} and ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
-      # max-parallel: 1
+      max-parallel: 10
       matrix:
-        os: [ubuntu-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ["3.9", "3.10", "3.11", "3.12"]
-    # Setup service container for influxdb database.
+    # Below example is to setup service container for influxdb database.
     # env variables set for minimal bootstrapped setup 
     # services:
     #   influxdb-test:
@@ -75,3 +75,4 @@ jobs:
       with:
         name: coverage-report
         path: ./htmlcov
+        retention-days: 5  # optional, to keep the artifact for a limited time
