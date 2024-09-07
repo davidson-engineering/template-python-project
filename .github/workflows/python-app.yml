@@ -66,6 +66,12 @@ jobs:
       run: |
         pip install coverage
         coverage run -m pytest
+        coverage report
+        coverage xml
     
-    - name: Create HTML coverage report
-      uses: romeovs/lcov-reporter-action@v0.3.1
+    # Upload coverage report
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v3
+      with:
+        name: coverage-report
+        path: coverage.xml
