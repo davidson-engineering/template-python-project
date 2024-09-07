@@ -66,3 +66,6 @@ jobs:
       run: |
         pip install coverage
         coverage run -m pytest
+    
+    - name: Create HTML coverage report
+      uses: romeovs/lcov-reporter-action@v0.3.1
