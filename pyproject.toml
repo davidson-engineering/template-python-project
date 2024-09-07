@@ -21,10 +21,9 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
 ]
 
-# dependencies = [
-#    "numpy",
-#    "my_module @ git+https://github.com/my_github/my_repo.git@tag", 
-# ]
+dependencies = [
+   "python-config-loader @ git+https://github.com/davidson-engineering/python-config-loader.git", 
+]
 
 # If a module, then use fetch version from src/module_name/__init__.py
 # [tool.setuptools.dynamic]
