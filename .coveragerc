@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = your_package
+source = module0
 
 [report]
 show_missing = True
