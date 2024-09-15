@@ -43,6 +43,16 @@ test = [
   "pytest >= 7.1.1",
 ]
 
+
+[tool.pytest.ini_options]
+#addopts = "--maxfail=1 -s"
+#console_output_style = "progress"
+#log_cli = false
+#log_level = "INFO"
+#log_cli_format = "%(asctime)s %(levelname)s %(message)s"
+#log_file = "logs/pytest-logs.txt"
+#log_file_level = "INFO"
+
 # [project.urls]
 # homepage = "https://example.com"
 # documentation = "https://readthedocs.org"
