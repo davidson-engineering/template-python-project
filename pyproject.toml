@@ -3,7 +3,7 @@ name = "project_or_module_name"
 description = "A_short_description"
 
 # If a project, then you can specify version here
-# version = "0.0.0"
+version = "0.0.1"
 # If a module, then fetch version dynamically (see [tool.setuptools.dynamic] below)
 dynamic = ["version"]
 
@@ -24,10 +24,9 @@ classifiers = [
     "Programming Language :: Python :: 3.12",
 ]
 
-# dependencies = [
-#    "numpy",
-#    "my_module @ git+https://github.com/my_github/my_repo.git@tag", 
-# ]
+dependencies = [
+   "python-config-loader @ git+https://github.com/davidson-engineering/python-config-loader.git", 
+]
 
 # Use this line if your project comprises of modules only without any ./src/* files
 #[tool.setuptools]
