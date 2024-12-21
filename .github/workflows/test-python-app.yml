@@ -1,8 +1,7 @@
 # This workflow will install Python dependencies, run tests and lint with multiple versions of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application
-
+name: Test python application
 on:
   push:
     branches: [ "main" ]
@@ -19,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest, windows-latest]
-        python-version: ["3.9", "3.10", "3.11", "3.12"]
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14.0-alpha.3"]
     steps:
     - uses: actions/checkout@v4
     - name: Install uv
@@ -28,15 +27,33 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ matrix.python-version }}
+    
+    # Setup environment and install dependencies
     - name: Install dependencies
       run: |
         make install
+
+    # Lint with flake8
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+
+    # Run tests
     - name: Test with pytest
       run: |
         make test
+        - name: Generate coverage report
+        run: |
+          coverage report
+          coverage html
+
+    # Upload coverage report
+    - name: Upload coverage report
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: ./htmlcov
+        retention-days: 5  # optional, to keep the artifact for a limited time
