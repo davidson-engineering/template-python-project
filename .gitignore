@@ -168,6 +168,6 @@ cython_debug/
 !.*-default
 
 # Forced inclusions
-!.env
+!.env-default
 !.github
 !.coveragerc
